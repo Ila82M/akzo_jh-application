@@ -1,0 +1,38 @@
+{
+  "generator-jhipster": {
+    "applicationType": "monolith",
+    "gitCompany": "",
+    "baseName": "akzoJHApplication",
+    "packageName": "com.serijakala.sj4.akzo.akzonobel",
+    "packageFolder": "com/serijakala/sj4/akzo/akzonobel",
+    "serverPort": 8080,
+    "serviceDiscoveryType": false,
+    "authenticationType": "session",
+    "uaaBaseName": "../uaa",
+    "cacheProvider": "no",
+    "enableHibernateCache": false,
+    "websocket": false,
+    "databaseType": "sql",
+    "devDatabaseType": "oracle",
+    "prodDatabaseType": "oracle",
+    "searchEngine": false,
+    "enableSwaggerCodegen": false,
+    "messageBroker": false,
+    "buildTool": "maven",
+    "useSass": false,
+    "clientPackageManager": "npm",
+    "testFrameworks": [],
+    "enableTranslation": false,
+    "nativeLanguage": "en",
+    "languages": [
+      "en"
+    ],
+    "clientFramework": "angularX",
+    "jhiPrefix": "jhi",
+    "jhipsterVersion": "5.4.2",
+    "rememberMeKey": "50b70ba9e0391b7e5d056a21e2af7e65bbeaec5d5f2e243efe67c421640caa634ba5399f6438975931527efa4df988d8f1f2"
+  },
+  "git-provider": "GitHub",
+  "git-company": "Ila82M",
+  "repository-name": "akzo_jh-application"
+}
