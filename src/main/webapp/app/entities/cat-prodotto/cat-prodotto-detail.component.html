@@ -1,0 +1,75 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="catProdotto">
+            <h2><span>Cat Prodotto</span> {{catProdotto.id}}</h2>
+            <hr>
+            <jhi-alert-error></jhi-alert-error>
+            <dl class="row-md jh-entity-details">
+                <dt><span>Nome</span></dt>
+                <dd>
+                    <span>{{catProdotto.nome}}</span>
+                </dd>
+                <dt><span>Descrizione</span></dt>
+                <dd>
+                    <span>{{catProdotto.descrizione}}</span>
+                </dd>
+                <dt><span>Sottotipo</span></dt>
+                <dd>
+                    <span>{{catProdotto.sottotipo}}</span>
+                </dd>
+                <dt><span>Note</span></dt>
+                <dd>
+                    <span>{{catProdotto.note}}</span>
+                </dd>
+                <dt><span>Scheda Tecnica</span></dt>
+                <dd>
+                    <span>{{catProdotto.schedaTecnica}}</span>
+                </dd>
+                <dt><span>Scheda Sicurezza</span></dt>
+                <dd>
+                    <span>{{catProdotto.schedaSicurezza}}</span>
+                </dd>
+                <dt><span>Img</span></dt>
+                <dd>
+                    <span>{{catProdotto.img}}</span>
+                </dd>
+                <dt><span>Data Update</span></dt>
+                <dd>
+                    <span>{{catProdotto.dataUpdate}}</span>
+                </dd>
+                <dt><span>Pubblicato</span></dt>
+                <dd>
+                    <span>{{catProdotto.pubblicato}}</span>
+                </dd>
+                <dt><span>Misura</span></dt>
+                <dd>
+                    <span>{{catProdotto.misura}}</span>
+                </dd>
+                <dt><span>Famiglia</span></dt>
+                <dd>
+                    <div *ngIf="catProdotto.famigliaId">
+                        <a [routerLink]="['/cat-famiglia', catProdotto.famigliaId, 'view']">{{catProdotto.famigliaId}}</a>
+                    </div>
+                </dd>
+                <dt><span>Tipoprodotto</span></dt>
+                <dd>
+                    <div *ngIf="catProdotto.tipoprodottoId">
+                        <a [routerLink]="['/cat-tipoprodotto', catProdotto.tipoprodottoId, 'view']">{{catProdotto.tipoprodottoId}}</a>
+                    </div>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon [icon]="'arrow-left'"></fa-icon>&nbsp;<span> Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/cat-prodotto', catProdotto.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon [icon]="'pencil-alt'"></fa-icon>&nbsp;<span> Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

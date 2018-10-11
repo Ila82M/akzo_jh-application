@@ -1,0 +1,92 @@
+<div>
+    <h2 id="page-heading">
+        <span>Cat Prodottos</span>
+        <button id="jh-create-entity" class="btn btn-primary float-right jh-create-entity create-cat-prodotto" [routerLink]="['/cat-prodotto/new']">
+            <fa-icon [icon]="'plus'"></fa-icon>
+            <span >
+            Create new Cat Prodotto
+            </span>
+        </button>
+    </h2>
+    <jhi-alert></jhi-alert>
+    <br/>
+    <div class="table-responsive" *ngIf="catProdottos">
+        <table class="table table-striped">
+            <thead>
+            <tr jhiSort [(predicate)]="predicate" [(ascending)]="reverse" [callback]="transition.bind(this)">
+            <th jhiSortBy="id"><span>ID</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="nome"><span>Nome</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="descrizione"><span>Descrizione</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="sottotipo"><span>Sottotipo</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="note"><span>Note</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="schedaTecnica"><span>Scheda Tecnica</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="schedaSicurezza"><span>Scheda Sicurezza</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="img"><span>Img</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="dataUpdate"><span>Data Update</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="pubblicato"><span>Pubblicato</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="misura"><span>Misura</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="famigliaId"><span>Famiglia</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="tipoprodottoId"><span>Tipoprodotto</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th></th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr *ngFor="let catProdotto of catProdottos ;trackBy: trackId">
+                <td><a [routerLink]="['/cat-prodotto', catProdotto.id, 'view' ]">{{catProdotto.id}}</a></td>
+                <td>{{catProdotto.nome}}</td>
+                <td>{{catProdotto.descrizione}}</td>
+                <td>{{catProdotto.sottotipo}}</td>
+                <td>{{catProdotto.note}}</td>
+                <td>{{catProdotto.schedaTecnica}}</td>
+                <td>{{catProdotto.schedaSicurezza}}</td>
+                <td>{{catProdotto.img}}</td>
+                <td>{{catProdotto.dataUpdate | date:'medium'}}</td>
+                <td>{{catProdotto.pubblicato}}</td>
+                <td>{{catProdotto.misura}}</td>
+                <td>
+                    <div *ngIf="catProdotto.famigliaId">
+                        <a [routerLink]="['../cat-famiglia', catProdotto.famigliaId , 'view' ]" >{{catProdotto.famigliaId}}</a>
+                    </div>
+                </td>
+                <td>
+                    <div *ngIf="catProdotto.tipoprodottoId">
+                        <a [routerLink]="['../cat-tipoprodotto', catProdotto.tipoprodottoId , 'view' ]" >{{catProdotto.tipoprodottoId}}</a>
+                    </div>
+                </td>
+                <td class="text-right">
+                    <div class="btn-group flex-btn-group-container">
+                        <button type="submit"
+                                [routerLink]="['/cat-prodotto', catProdotto.id, 'view' ]"
+                                class="btn btn-info btn-sm">
+                            <fa-icon [icon]="'eye'"></fa-icon>
+                            <span class="d-none d-md-inline">View</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/cat-prodotto', catProdotto.id, 'edit']"
+                                class="btn btn-primary btn-sm">
+                            <fa-icon [icon]="'pencil-alt'"></fa-icon>
+                            <span class="d-none d-md-inline">Edit</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/', { outlets: { popup: 'cat-prodotto/'+ catProdotto.id + '/delete'} }]"
+                                replaceUrl="true"
+                                queryParamsHandling="merge"
+                                class="btn btn-danger btn-sm">
+                            <fa-icon [icon]="'times'"></fa-icon>
+                            <span class="d-none d-md-inline">Delete</span>
+                        </button>
+                    </div>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+    <div *ngIf="catProdottos && catProdottos.length">
+        <div class="row justify-content-center">
+            <jhi-item-count [page]="page" [total]="queryCount" [maxSize]="5" [itemsPerPage]="itemsPerPage"></jhi-item-count>
+        </div>
+        <div class="row justify-content-center">
+            <ngb-pagination [collectionSize]="totalItems" [(page)]="page" [pageSize]="itemsPerPage" [maxSize]="5" [rotate]="true" [boundaryLinks]="true" (pageChange)="loadPage(page)"></ngb-pagination>
+        </div>
+    </div>
+</div>

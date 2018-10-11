@@ -1,0 +1,26 @@
+{
+    "name": "CatColore",
+    "fields": [
+        {
+            "fieldName": "descrizione",
+            "fieldType": "String"
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "many-to-one",
+            "relationshipName": "gruppocolore",
+            "otherEntityName": "catGruppocolore",
+            "otherEntityField": "id"
+        }
+    ],
+    "changelogDate": "20181011134139",
+    "entityTableName": "cat_colore",
+    "dto": "mapstruct",
+    "pagination": "pagination",
+    "service": "serviceImpl",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "clientRootFolder": "",
+    "applications": "*"
+}

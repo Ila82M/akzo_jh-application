@@ -1,0 +1,50 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <form name="editForm" role="form" novalidate (ngSubmit)="save()" #editForm="ngForm">
+            <h2 id="jhi-cat-colorebase-heading">Create or edit a Cat Colorebase</h2>
+            <div>
+                <jhi-alert-error></jhi-alert-error>
+                <div class="form-group" [hidden]="!catColorebase.id">
+                    <label for="id">ID</label>
+                    <input type="text" class="form-control" id="id" name="id"
+                        [(ngModel)]="catColorebase.id" readonly />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_resa">Resa</label>
+                    <input type="number" class="form-control" name="resa" id="field_resa"
+                        [(ngModel)]="catColorebase.resa" />
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" for="field_base">Base</label>
+                    <select class="form-control" id="field_base" name="base" [(ngModel)]="catColorebase.baseId" >
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="catBaseOption.id" *ngFor="let catBaseOption of catbases; trackBy: trackCatBaseById">{{catBaseOption.id}}</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_gruppocolore">Gruppocolore</label>
+                    <select class="form-control" id="field_gruppocolore" name="gruppocolore" [(ngModel)]="catColorebase.gruppocoloreId" >
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="catGruppocoloreOption.id" *ngFor="let catGruppocoloreOption of catgruppocolores; trackBy: trackCatGruppocoloreById">{{catGruppocoloreOption.id}}</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_tipocolore">Tipocolore</label>
+                    <select class="form-control" id="field_tipocolore" name="tipocolore" [(ngModel)]="catColorebase.tipocoloreId" >
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="catTipocoloreOption.id" *ngFor="let catTipocoloreOption of cattipocolores; trackBy: trackCatTipocoloreById">{{catTipocoloreOption.id}}</option>
+                    </select>
+                </div>
+            </div>
+            <div>
+                <button type="button" id="cancel-save" class="btn btn-secondary"  (click)="previousState()">
+                    <fa-icon [icon]="'ban'"></fa-icon>&nbsp;<span>Cancel</span>
+                </button>
+                <button type="submit" id="save-entity" [disabled]="editForm.form.invalid || isSaving" class="btn btn-primary">
+                    <fa-icon [icon]="'save'"></fa-icon>&nbsp;<span>Save</span>
+                </button>
+            </div>
+        </form>
+    </div>
+</div>

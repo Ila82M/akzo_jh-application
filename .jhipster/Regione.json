@@ -1,0 +1,23 @@
+{
+    "name": "Regione",
+    "fields": [
+        {
+            "fieldName": "codRegione",
+            "fieldType": "Long"
+        },
+        {
+            "fieldName": "nome",
+            "fieldType": "String"
+        }
+    ],
+    "relationships": [],
+    "changelogDate": "20181011134148",
+    "entityTableName": "regione",
+    "dto": "mapstruct",
+    "pagination": "pagination",
+    "service": "serviceImpl",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "clientRootFolder": "",
+    "applications": "*"
+}

@@ -1,0 +1,31 @@
+{
+    "name": "Manager",
+    "fields": [
+        {
+            "fieldName": "iduser",
+            "fieldType": "Long"
+        },
+        {
+            "fieldName": "areamanager",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "agente",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "npuntivendita",
+            "fieldType": "Long"
+        }
+    ],
+    "relationships": [],
+    "changelogDate": "20181011134149",
+    "entityTableName": "manager",
+    "dto": "mapstruct",
+    "pagination": "pagination",
+    "service": "serviceImpl",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "clientRootFolder": "",
+    "applications": "*"
+}

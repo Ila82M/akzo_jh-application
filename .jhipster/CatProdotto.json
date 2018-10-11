@@ -1,0 +1,68 @@
+{
+    "name": "CatProdotto",
+    "fields": [
+        {
+            "fieldName": "nome",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "descrizione",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "sottotipo",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "note",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "schedaTecnica",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "schedaSicurezza",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "img",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "dataUpdate",
+            "fieldType": "Instant"
+        },
+        {
+            "fieldName": "pubblicato",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "misura",
+            "fieldType": "String"
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "many-to-one",
+            "relationshipName": "famiglia",
+            "otherEntityName": "catFamiglia",
+            "otherEntityField": "id"
+        },
+        {
+            "relationshipType": "many-to-one",
+            "relationshipName": "tipoprodotto",
+            "otherEntityName": "catTipoprodotto",
+            "otherEntityField": "id"
+        }
+    ],
+    "changelogDate": "20181011134145",
+    "entityTableName": "cat_prodotto",
+    "dto": "mapstruct",
+    "pagination": "pagination",
+    "service": "serviceImpl",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "clientRootFolder": "",
+    "applications": "*"
+}
