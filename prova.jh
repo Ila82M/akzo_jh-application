@@ -1,0 +1,140 @@
+
+
+
+entity CatBase {
+    id Long,
+    codbase String,
+    descrizione String
+}
+entity CatColorebase {
+    id Long,
+    resa Long
+ //   catBaseByIdBase CatBase
+}
+
+entity CatColore {
+    id Long,
+    descrizione String
+}
+entity CatGruppocolore {
+    id Long,
+    descrizione String
+}
+entity CatLattina {
+    id Long,
+    litraggio Long,
+    codice String,
+    prezzo Long
+  , dataUpdate Instant
+  //  , catColorebaseByIdColorebase CatColorebase 
+}
+entity CatTipocolore {
+    id Long,
+    idProdotto Integer,
+    descrizione String
+}
+
+
+
+entity CatBase {
+    id Long,
+    codbase String,
+    descrizione String
+}
+entity CatColorebase {
+    id Long,
+    resa Long
+ //   catBaseByIdBase CatBase
+}
+entity CatFamiglia {
+    id Long,
+    marchio String,
+    attivo String
+}
+entity CatGruppocolore {
+    id Long,
+    descrizione String
+}
+entity CatLattina {
+    id Long,
+    litraggio Long,
+    codice String,
+    prezzo Long,
+    dataUpdate Instant
+  //  , catColorebaseByIdColorebase CatColorebase 
+}
+entity CatTipocolore {
+    id Long,
+    idProdotto Integer,
+    descrizione String
+}
+
+entity CatColore {
+    id Long,
+    descrizione String
+}
+entity CatTipoprodotto{
+	id Long,
+    descrizione String
+}
+entity CatProdotto {
+    id Long,
+    nome String,
+    descrizione String,
+    sottotipo String,
+    note String,
+    schedaTecnica String,
+    schedaSicurezza String,
+    img String,
+    dataUpdate Instant,
+    pubblicato String,
+    misura String
+}
+
+entity Comune{
+    cod Long,
+    nome String
+}
+
+entity Provincia{
+	codProvincia Long,	
+    nome String,	
+    sigla String
+}
+
+entity Regione{
+	codRegione Long,
+	nome String
+}
+
+entity Manager{
+	iduser Long,
+	areamanager String,
+	agente String,
+	npuntivendita Long,
+	id Long
+}
+
+
+relationship ManyToOne{
+	CatColorebase{base} to CatBase,
+    CatColorebase{gruppocolore} to CatGruppocolore,
+    CatColorebase{tipocolore} to CatTipocolore,
+    CatLattina{colorebase} to CatColorebase,
+	CatColore{gruppocolore} to CatGruppocolore
+    CatProdotto{famiglia} to CatFamiglia,
+    CatProdotto{tipoprodotto} to CatTipoprodotto,
+    Provincia{codRegione} to Regione,
+    Comune{codProvincia} to Provincia
+}
+
+// Set pagination options
+//paginate JobHistory, Employee with infinite-scroll
+paginate all with pagination
+
+// Use Data Transfert Objects (DTO)
+// dto * with mapstruct
+
+// Set service options to all except few
+service all with serviceImpl 
+
