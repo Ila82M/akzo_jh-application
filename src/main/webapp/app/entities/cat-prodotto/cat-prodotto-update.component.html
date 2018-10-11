@@ -1,0 +1,90 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <form name="editForm" role="form" novalidate (ngSubmit)="save()" #editForm="ngForm">
+            <h2 id="jhi-cat-prodotto-heading">Create or edit a Cat Prodotto</h2>
+            <div>
+                <jhi-alert-error></jhi-alert-error>
+                <div class="form-group" [hidden]="!catProdotto.id">
+                    <label for="id">ID</label>
+                    <input type="text" class="form-control" id="id" name="id"
+                        [(ngModel)]="catProdotto.id" readonly />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_nome">Nome</label>
+                    <input type="text" class="form-control" name="nome" id="field_nome"
+                        [(ngModel)]="catProdotto.nome" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_descrizione">Descrizione</label>
+                    <input type="text" class="form-control" name="descrizione" id="field_descrizione"
+                        [(ngModel)]="catProdotto.descrizione" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_sottotipo">Sottotipo</label>
+                    <input type="text" class="form-control" name="sottotipo" id="field_sottotipo"
+                        [(ngModel)]="catProdotto.sottotipo" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_note">Note</label>
+                    <input type="text" class="form-control" name="note" id="field_note"
+                        [(ngModel)]="catProdotto.note" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_schedaTecnica">Scheda Tecnica</label>
+                    <input type="text" class="form-control" name="schedaTecnica" id="field_schedaTecnica"
+                        [(ngModel)]="catProdotto.schedaTecnica" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_schedaSicurezza">Scheda Sicurezza</label>
+                    <input type="text" class="form-control" name="schedaSicurezza" id="field_schedaSicurezza"
+                        [(ngModel)]="catProdotto.schedaSicurezza" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_img">Img</label>
+                    <input type="text" class="form-control" name="img" id="field_img"
+                        [(ngModel)]="catProdotto.img" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_dataUpdate">Data Update</label>
+                    <div class="d-flex">
+                        <input id="field_dataUpdate" type="datetime-local" class="form-control" name="dataUpdate" [(ngModel)]="dataUpdate"
+                        />
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_pubblicato">Pubblicato</label>
+                    <input type="text" class="form-control" name="pubblicato" id="field_pubblicato"
+                        [(ngModel)]="catProdotto.pubblicato" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_misura">Misura</label>
+                    <input type="text" class="form-control" name="misura" id="field_misura"
+                        [(ngModel)]="catProdotto.misura" />
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" for="field_famiglia">Famiglia</label>
+                    <select class="form-control" id="field_famiglia" name="famiglia" [(ngModel)]="catProdotto.famiglia" >
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="catFamigliaOption.id === catProdotto.famiglia?.id ? catProdotto.famiglia : catFamigliaOption" *ngFor="let catFamigliaOption of catfamiglias; trackBy: trackCatFamigliaById">{{catFamigliaOption.id}}</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_tipoprodotto">Tipoprodotto</label>
+                    <select class="form-control" id="field_tipoprodotto" name="tipoprodotto" [(ngModel)]="catProdotto.tipoprodotto" >
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="catTipoprodottoOption.id === catProdotto.tipoprodotto?.id ? catProdotto.tipoprodotto : catTipoprodottoOption" *ngFor="let catTipoprodottoOption of cattipoprodottos; trackBy: trackCatTipoprodottoById">{{catTipoprodottoOption.id}}</option>
+                    </select>
+                </div>
+            </div>
+            <div>
+                <button type="button" id="cancel-save" class="btn btn-secondary"  (click)="previousState()">
+                    <fa-icon [icon]="'ban'"></fa-icon>&nbsp;<span>Cancel</span>
+                </button>
+                <button type="submit" id="save-entity" [disabled]="editForm.form.invalid || isSaving" class="btn btn-primary">
+                    <fa-icon [icon]="'save'"></fa-icon>&nbsp;<span>Save</span>
+                </button>
+            </div>
+        </form>
+    </div>
+</div>

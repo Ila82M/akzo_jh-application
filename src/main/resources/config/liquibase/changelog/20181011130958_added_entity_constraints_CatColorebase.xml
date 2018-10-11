@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.5.xsd">
+    <!--
+        Added the constraints for entity CatColorebase.
+    -->
+    <changeSet id="20181011130958-2" author="jhipster">
+        
+        <addForeignKeyConstraint baseColumnNames="base_id"
+                                 baseTableName="cat_colorebase"
+                                 constraintName="fk_cat_colorebase_base_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="cat_base"/>
+
+        <addForeignKeyConstraint baseColumnNames="gruppocolore_id"
+                                 baseTableName="cat_colorebase"
+                                 constraintName="cat_colorebase_gruppocolore_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="cat_gruppocolore"/>
+
+        <addForeignKeyConstraint baseColumnNames="tipocolore_id"
+                                 baseTableName="cat_colorebase"
+                                 constraintName="cat_colorebase_tipocolore_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="cat_tipocolore"/>
+
+    </changeSet>
+</databaseChangeLog>

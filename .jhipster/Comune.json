@@ -1,0 +1,30 @@
+{
+    "name": "Comune",
+    "fields": [
+        {
+            "fieldName": "cod",
+            "fieldType": "Long"
+        },
+        {
+            "fieldName": "nome",
+            "fieldType": "String"
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "many-to-one",
+            "relationshipName": "codProvincia",
+            "otherEntityName": "provincia",
+            "otherEntityField": "id"
+        }
+    ],
+    "changelogDate": "20181011131006",
+    "entityTableName": "comune",
+    "dto": "no",
+    "pagination": "pagination",
+    "service": "serviceImpl",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "clientRootFolder": "",
+    "applications": "*"
+}
