@@ -1,0 +1,45 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="catLattina">
+            <h2><span>Cat Lattina</span> {{catLattina.id}}</h2>
+            <hr>
+            <jhi-alert-error></jhi-alert-error>
+            <dl class="row-md jh-entity-details">
+                <dt><span>Litraggio</span></dt>
+                <dd>
+                    <span>{{catLattina.litraggio}}</span>
+                </dd>
+                <dt><span>Codice</span></dt>
+                <dd>
+                    <span>{{catLattina.codice}}</span>
+                </dd>
+                <dt><span>Prezzo</span></dt>
+                <dd>
+                    <span>{{catLattina.prezzo}}</span>
+                </dd>
+                <dt><span>Data Update</span></dt>
+                <dd>
+                    <span>{{catLattina.dataUpdate}}</span>
+                </dd>
+                <dt><span>Colorebase</span></dt>
+                <dd>
+                    <div *ngIf="catLattina.colorebase">
+                        <a [routerLink]="['/cat-colorebase', catLattina.colorebase?.id, 'view']">{{catLattina.colorebase?.id}}</a>
+                    </div>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon [icon]="'arrow-left'"></fa-icon>&nbsp;<span> Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/cat-lattina', catLattina.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon [icon]="'pencil-alt'"></fa-icon>&nbsp;<span> Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,19 @@
+{
+    "name": "CatGruppocolore",
+    "fields": [
+        {
+            "fieldName": "descrizione",
+            "fieldType": "String"
+        }
+    ],
+    "relationships": [],
+    "changelogDate": "20181011131035",
+    "entityTableName": "cat_gruppocolore",
+    "dto": "no",
+    "pagination": "pagination",
+    "service": "serviceImpl",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "clientRootFolder": "",
+    "applications": "*"
+}

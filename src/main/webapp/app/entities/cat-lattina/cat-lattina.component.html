@@ -1,0 +1,74 @@
+<div>
+    <h2 id="page-heading">
+        <span>Cat Lattinas</span>
+        <button id="jh-create-entity" class="btn btn-primary float-right jh-create-entity create-cat-lattina" [routerLink]="['/cat-lattina/new']">
+            <fa-icon [icon]="'plus'"></fa-icon>
+            <span >
+            Create new Cat Lattina
+            </span>
+        </button>
+    </h2>
+    <jhi-alert></jhi-alert>
+    <br/>
+    <div class="table-responsive" *ngIf="catLattinas">
+        <table class="table table-striped">
+            <thead>
+            <tr jhiSort [(predicate)]="predicate" [(ascending)]="reverse" [callback]="transition.bind(this)">
+            <th jhiSortBy="id"><span>ID</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="litraggio"><span>Litraggio</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="codice"><span>Codice</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="prezzo"><span>Prezzo</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="dataUpdate"><span>Data Update</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="colorebase.id"><span>Colorebase</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th></th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr *ngFor="let catLattina of catLattinas ;trackBy: trackId">
+                <td><a [routerLink]="['/cat-lattina', catLattina.id, 'view' ]">{{catLattina.id}}</a></td>
+                <td>{{catLattina.litraggio}}</td>
+                <td>{{catLattina.codice}}</td>
+                <td>{{catLattina.prezzo}}</td>
+                <td>{{catLattina.dataUpdate | date:'medium'}}</td>
+                <td>
+                    <div *ngIf="catLattina.colorebase">
+                        <a [routerLink]="['../cat-colorebase', catLattina.colorebase?.id, 'view' ]" >{{catLattina.colorebase?.id}}</a>
+                    </div>
+                </td>
+                <td class="text-right">
+                    <div class="btn-group flex-btn-group-container">
+                        <button type="submit"
+                                [routerLink]="['/cat-lattina', catLattina.id, 'view' ]"
+                                class="btn btn-info btn-sm">
+                            <fa-icon [icon]="'eye'"></fa-icon>
+                            <span class="d-none d-md-inline">View</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/cat-lattina', catLattina.id, 'edit']"
+                                class="btn btn-primary btn-sm">
+                            <fa-icon [icon]="'pencil-alt'"></fa-icon>
+                            <span class="d-none d-md-inline">Edit</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/', { outlets: { popup: 'cat-lattina/'+ catLattina.id + '/delete'} }]"
+                                replaceUrl="true"
+                                queryParamsHandling="merge"
+                                class="btn btn-danger btn-sm">
+                            <fa-icon [icon]="'times'"></fa-icon>
+                            <span class="d-none d-md-inline">Delete</span>
+                        </button>
+                    </div>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+    <div *ngIf="catLattinas && catLattinas.length">
+        <div class="row justify-content-center">
+            <jhi-item-count [page]="page" [total]="queryCount" [maxSize]="5" [itemsPerPage]="itemsPerPage"></jhi-item-count>
+        </div>
+        <div class="row justify-content-center">
+            <ngb-pagination [collectionSize]="totalItems" [(page)]="page" [pageSize]="itemsPerPage" [maxSize]="5" [rotate]="true" [boundaryLinks]="true" (pageChange)="loadPage(page)"></ngb-pagination>
+        </div>
+    </div>
+</div>
