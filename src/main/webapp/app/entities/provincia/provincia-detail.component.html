@@ -1,0 +1,41 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="provincia">
+            <h2><span>Provincia</span> {{provincia.id}}</h2>
+            <hr>
+            <jhi-alert-error></jhi-alert-error>
+            <dl class="row-md jh-entity-details">
+                <dt><span>Cod Provincia</span></dt>
+                <dd>
+                    <span>{{provincia.codProvincia}}</span>
+                </dd>
+                <dt><span>Nome</span></dt>
+                <dd>
+                    <span>{{provincia.nome}}</span>
+                </dd>
+                <dt><span>Sigla</span></dt>
+                <dd>
+                    <span>{{provincia.sigla}}</span>
+                </dd>
+                <dt><span>Cod Regione</span></dt>
+                <dd>
+                    <div *ngIf="provincia.codRegioneId">
+                        <a [routerLink]="['/regione', provincia.codRegioneId, 'view']">{{provincia.codRegioneId}}</a>
+                    </div>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon [icon]="'arrow-left'"></fa-icon>&nbsp;<span> Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/provincia', provincia.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon [icon]="'pencil-alt'"></fa-icon>&nbsp;<span> Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

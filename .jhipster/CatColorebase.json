@@ -1,0 +1,38 @@
+{
+    "name": "CatColorebase",
+    "fields": [
+        {
+            "fieldName": "resa",
+            "fieldType": "Long"
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "many-to-one",
+            "relationshipName": "base",
+            "otherEntityName": "catBase",
+            "otherEntityField": "id"
+        },
+        {
+            "relationshipType": "many-to-one",
+            "relationshipName": "gruppocolore",
+            "otherEntityName": "catGruppocolore",
+            "otherEntityField": "id"
+        },
+        {
+            "relationshipType": "many-to-one",
+            "relationshipName": "tipocolore",
+            "otherEntityName": "catTipocolore",
+            "otherEntityField": "id"
+        }
+    ],
+    "changelogDate": "20181011134138",
+    "entityTableName": "cat_colorebase",
+    "dto": "mapstruct",
+    "pagination": "pagination",
+    "service": "serviceImpl",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "clientRootFolder": "",
+    "applications": "*"
+}

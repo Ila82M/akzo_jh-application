@@ -1,0 +1,23 @@
+{
+    "name": "CatTipocolore",
+    "fields": [
+        {
+            "fieldName": "idProdotto",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "descrizione",
+            "fieldType": "String"
+        }
+    ],
+    "relationships": [],
+    "changelogDate": "20181011134142",
+    "entityTableName": "cat_tipocolore",
+    "dto": "mapstruct",
+    "pagination": "pagination",
+    "service": "serviceImpl",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "clientRootFolder": "",
+    "applications": "*"
+}
