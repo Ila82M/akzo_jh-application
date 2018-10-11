@@ -1,0 +1,38 @@
+{
+    "name": "CatLattina",
+    "fields": [
+        {
+            "fieldName": "litraggio",
+            "fieldType": "Long"
+        },
+        {
+            "fieldName": "codice",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "prezzo",
+            "fieldType": "Long"
+        },
+        {
+            "fieldName": "dataUpdate",
+            "fieldType": "Instant"
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "many-to-one",
+            "relationshipName": "colorebase",
+            "otherEntityName": "catColorebase",
+            "otherEntityField": "id"
+        }
+    ],
+    "changelogDate": "20181011131036",
+    "entityTableName": "cat_lattina",
+    "dto": "no",
+    "pagination": "pagination",
+    "service": "serviceImpl",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "clientRootFolder": "",
+    "applications": "*"
+}

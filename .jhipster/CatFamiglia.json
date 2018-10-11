@@ -1,0 +1,23 @@
+{
+    "name": "CatFamiglia",
+    "fields": [
+        {
+            "fieldName": "marchio",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "attivo",
+            "fieldType": "String"
+        }
+    ],
+    "relationships": [],
+    "changelogDate": "20181011131038",
+    "entityTableName": "cat_famiglia",
+    "dto": "no",
+    "pagination": "pagination",
+    "service": "serviceImpl",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "clientRootFolder": "",
+    "applications": "*"
+}
