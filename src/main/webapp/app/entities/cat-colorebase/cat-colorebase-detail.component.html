@@ -1,0 +1,45 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="catColorebase">
+            <h2><span>Cat Colorebase</span> {{catColorebase.id}}</h2>
+            <hr>
+            <jhi-alert-error></jhi-alert-error>
+            <dl class="row-md jh-entity-details">
+                <dt><span>Resa</span></dt>
+                <dd>
+                    <span>{{catColorebase.resa}}</span>
+                </dd>
+                <dt><span>Base</span></dt>
+                <dd>
+                    <div *ngIf="catColorebase.base">
+                        <a [routerLink]="['/cat-base', catColorebase.base?.id, 'view']">{{catColorebase.base?.id}}</a>
+                    </div>
+                </dd>
+                <dt><span>Gruppocolore</span></dt>
+                <dd>
+                    <div *ngIf="catColorebase.gruppocolore">
+                        <a [routerLink]="['/cat-gruppocolore', catColorebase.gruppocolore?.id, 'view']">{{catColorebase.gruppocolore?.id}}</a>
+                    </div>
+                </dd>
+                <dt><span>Tipocolore</span></dt>
+                <dd>
+                    <div *ngIf="catColorebase.tipocolore">
+                        <a [routerLink]="['/cat-tipocolore', catColorebase.tipocolore?.id, 'view']">{{catColorebase.tipocolore?.id}}</a>
+                    </div>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon [icon]="'arrow-left'"></fa-icon>&nbsp;<span> Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/cat-colorebase', catColorebase.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon [icon]="'pencil-alt'"></fa-icon>&nbsp;<span> Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

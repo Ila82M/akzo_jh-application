@@ -5,6 +5,25 @@
     xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.5.xsd">
 
     <include file="config/liquibase/changelog/00000000000000_initial_schema.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20181011130957_added_entity_CatBase.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20181011130958_added_entity_CatColorebase.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20181011130959_added_entity_CatColore.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20181011131000_added_entity_CatGruppocolore.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20181011131001_added_entity_CatLattina.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20181011131002_added_entity_CatTipocolore.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20181011131003_added_entity_CatFamiglia.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20181011131004_added_entity_CatTipoprodotto.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20181011131005_added_entity_CatProdotto.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20181011131006_added_entity_Comune.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20181011131007_added_entity_Provincia.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20181011131008_added_entity_Regione.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20181011131009_added_entity_Manager.xml" relativeToChangelogFile="false"/>
     <!-- jhipster-needle-liquibase-add-changelog - JHipster will add liquibase changelogs here -->
+    <include file="config/liquibase/changelog/20181011130958_added_entity_constraints_CatColorebase.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20181011130959_added_entity_constraints_CatColore.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20181011131001_added_entity_constraints_CatLattina.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20181011131005_added_entity_constraints_CatProdotto.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20181011131006_added_entity_constraints_Comune.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20181011131007_added_entity_constraints_Provincia.xml" relativeToChangelogFile="false"/>
     <!-- jhipster-needle-liquibase-add-constraints-changelog - JHipster will add liquibase constraints changelogs here -->
 </databaseChangeLog>
